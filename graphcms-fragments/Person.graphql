@@ -1,0 +1,67 @@
+fragment Person on Person {
+  stage
+  publishedAt
+  updatedAt
+  createdAt
+  remoteId: id
+  name
+  role
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  testimonials {
+    ... on Testimonial {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  posts {
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  photo {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  company {
+    ... on Company {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  grids {
+    ... on Grid {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+}

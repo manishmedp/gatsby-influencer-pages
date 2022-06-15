@@ -1,0 +1,49 @@
+fragment Button on Button {
+  stage
+  locale
+  publishedAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  createdAt(variation: COMBINED)
+  remoteId: id
+  label
+  slug
+  href
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  heroes {
+    ... on Hero {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  breakpoints {
+    ... on Breakpoint {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  theme
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}

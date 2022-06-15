@@ -1,0 +1,80 @@
+fragment Grid on Grid {
+  stage
+  locale
+  publishedAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  createdAt(variation: COMBINED)
+  remoteId: id
+  title
+  slug
+  headline
+  subtitle
+  width
+  component
+  columnComponent
+  tag
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  theme
+  layout
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  pages {
+    ... on Page {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  columns {
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+    ... on Faq {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+    ... on Feature {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+    ... on Person {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+    ... on PricingPlan {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+    ... on Stat {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+}

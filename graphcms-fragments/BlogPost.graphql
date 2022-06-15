@@ -1,0 +1,80 @@
+fragment BlogPost on BlogPost {
+  stage
+  locale
+  publishedAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  createdAt(variation: COMBINED)
+  remoteId: id
+  title
+  slug
+  excerpt
+  published
+  content
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  coverImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  authors {
+    ... on Person {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  category
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  seo {
+    ... on Seo {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  marketingMaterial {
+    ... on Banner {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+    ... on Newsletter {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+    ... on PopUp {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  grids {
+    ... on Grid {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+}

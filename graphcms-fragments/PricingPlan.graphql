@@ -1,0 +1,44 @@
+fragment PricingPlan on PricingPlan {
+  stage
+  locale
+  publishedAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  createdAt(variation: COMBINED)
+  remoteId: id
+  name
+  description
+  included
+  monthlyPrice
+  annualPrice
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  grids {
+    ... on Grid {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+}

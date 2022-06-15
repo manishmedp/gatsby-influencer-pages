@@ -1,0 +1,50 @@
+fragment Banner on Banner {
+  stage
+  locale
+  publishedAt(variation: COMBINED)
+  updatedAt(variation: COMBINED)
+  createdAt(variation: COMBINED)
+  remoteId: id
+  content
+  slug
+  href
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  theme
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  blogPosts {
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  pages {
+    ... on Page {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+}

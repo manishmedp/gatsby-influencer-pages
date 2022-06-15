@@ -1,0 +1,51 @@
+fragment Company on Company {
+  stage
+  publishedAt
+  updatedAt
+  createdAt
+  remoteId: id
+  name
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  logoClouds {
+    ... on LogoCloud {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  logo {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  people {
+    ... on Person {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}
